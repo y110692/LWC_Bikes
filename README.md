@@ -5,4 +5,3 @@ LWC application on Salesforce with **Parent > Child**, **Child > Parent** Events
 See the demo below:
 
 ![This is an image](LWC_Bike_Demo.gif)
-
