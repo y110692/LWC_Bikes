@@ -1,0 +1,18 @@
+<template>
+    <lightning-card class="slds-size_1-of-1 " icon-name="utility:table" title="Cart">
+
+        <div class="slds-grid slds-wrap slds-grid_align-center   slds-grid_vertical-align-center slds-grid_align-space"
+            style="width:100%">
+            <template for:each={cart} for:item="cartItem">
+                <div key={cartItem.key}
+                    class=" slds-card slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 ">
+                    <div class="slds-p-around_large">
+                        <c-bike bike={cartItem}></c-bike>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+    </lightning-card>
+
+</template>

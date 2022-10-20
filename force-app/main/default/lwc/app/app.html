@@ -1,0 +1,47 @@
+<template>
+    <lightning-card class="slds-size_1-of-1 " icon-name="utility:table" title="Bike Shop">
+        <template if:true={isBikes}>
+
+            <div id="waiting" class="slds-text-align_center" if:false={ready}><br>Loading....
+            </div>
+
+            <div id="display" if:true={ready}>
+
+                <div class="slds-text-title_caps slds-border_bottom slds-m-around_medium">
+                    <div class="slds-text-align_center slds-align_absolute-center">
+                        Selected filters:&nbsp;
+                        <lightning-badge class="slds-badge_inverse" label={filters}>
+                        </lightning-badge>&nbsp;
+
+                        <lightning-badge label="Reset filters" onclick={handleResetFilters}>
+                        </lightning-badge>&nbsp;
+
+                        <lightning-badge label="Close shop" onclick={handleClosing}>
+                        </lightning-badge>&nbsp;
+
+                        <lightning-badge label={cartName} onclick={handleClosing}>
+                        </lightning-badge>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-wrap slds-grid_align-center   slds-grid_vertical-align-center slds-grid_align-space"
+                    style="width:100%">
+                    <template for:each={bikes} for:item="bike">
+                        <div key={bike.key}
+                            class=" slds-card slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 ">
+                            <div class="slds-p-around_large">
+                                <c-bike bike={bike} onaddtocart={handleAddToCart} onfilter={handleFilter}></c-bike>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+        <lightning-button class="slds-align_absolute-center" if:false={isBikes} onclick={handleLoading}
+            label="Open shop">
+        </lightning-button>
+
+    </lightning-card>
+</template>

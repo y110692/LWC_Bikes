@@ -1,0 +1,35 @@
+<template>
+    <div style="width:350px">
+        <lightning-card title={bike.name} variant="narrow" icon-name="custom:custom93">
+            <lightning-layout class="slds-m-around_medium slds-align_absolute-center">
+                <lightning-layout-item>
+
+                    <div><span style="font-weight:bold">Description</span>: {bike.description}</div>
+                    <div><span style="font-weight:bold">Price</span>: {bike.price}</div>
+                    <br>
+                    <div class="slds-text-align_center">
+                        <a style="text-decoration: none;" href="#">
+                            <lightning-badge label={bike.category} onclick={handleFilter}></lightning-badge>
+                        </a>&nbsp;&nbsp;
+                        <a style="text-decoration: none;" href="#">
+                            <lightning-badge label={bike.material} onclick={handleFilter}></lightning-badge>
+                        </a>
+                        <br>
+                        <br>
+                        <img style="object-fit: cover;   width: 230px;   height: 230px;
+                    border-radius: 15px;
+                    box-shadow: 3px 3px 1px #ccc;
+                     -webkit-box-shadow: 3px 3px 1px #ccc;  
+                     -moz-box-shadow: 3px 3px 1px #ccc;" src={bike.pictureUrl} />
+                    </div>
+                    <br><br>
+                    <div class="slds-text-align_center" onclick={handleAddToCart} style="font-weight:bold; ">[ add to
+                        cart
+                        ]
+                    </div>
+                    <br><br>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </div>
+</template>
